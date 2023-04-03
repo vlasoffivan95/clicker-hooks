@@ -1,9 +1,9 @@
-
+import Clicker from "components/Clicker";
 
 function App() {
   return (
     <div className="App">
-        <h2>sfdjksdf</h2>
+        <Clicker/>
     </div>
   );
 }
