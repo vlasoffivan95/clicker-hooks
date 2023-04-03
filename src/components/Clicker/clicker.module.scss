@@ -1,0 +1,48 @@
+.inputStyles {
+  border: 2px solid black;
+  text-align: center;
+  font-size: 14px;
+}
+
+.clickerContainer {
+  margin: 20vh 33%;
+  min-width: 40vw;
+  border: 2px solid black;
+  padding: 20px 30px;
+}
+
+.currentNum {
+  font-size: 14px;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid grey;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.inputStep {
+  border: 1px solid grey;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.btnClick {
+  font-size: 20px;
+  background-color: gray;
+  color: white;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 10px 40px;
+  margin-top: 30px;
+}
+
+.numContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pNumber {
+padding-top: 10px;
+}
