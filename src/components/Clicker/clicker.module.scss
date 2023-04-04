@@ -26,16 +26,20 @@
   font-size: 12px;
   text-align: center;
   border-radius: 5px;
+  margin:14px 0;
 }
 
 .btnClick {
-  font-size: 20px;
+  font-size: 18px;
   background-color: gray;
   color: white;
   border: 3px solid black;
   border-radius: 5px;
-  padding: 10px 40px;
   margin-top: 30px;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+
 }
 
 .numContainer {
@@ -46,3 +50,32 @@
 .pNumber {
 padding-top: 10px;
 }
+
+
+.btnContainer {
+  display:flex;
+  justify-content: space-around;
+}
+
+.pStep {
+  margin-top:30px;
+  font-size:16px;
+  background-color: black;
+  padding:10px;
+  color:white;
+  border:2px solid black;
+}
+
+
+.containerOperand {
+  padding:30px;
+  font-size:14px;
+  display: flex;
+
+}
+
+.labelOperand {
+  padding:10px;
+  margin-top:5px;
+}
+
