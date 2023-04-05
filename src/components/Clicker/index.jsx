@@ -3,16 +3,20 @@ import styles from "./clicker.module.scss";
 
 const Clicker = () => {
   const [currentNumber, setCurrentNumber] = useState(0);
-  const [stepNumber, setStepNumber] = useState(0);
+  const [stepNumber, setStepNumber] = useState(1);
   const [addNum, setAddNum] = useState("add");
   const [frequencyAutoClick, setFreqAutoclick] = useState(1);
   const [isStartedAutoClick, setStartedAutoClick] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
-
+  console.log(isStartedAutoClick)
   useEffect(() => {
-    startAutoClick();
+    if (!isStartedAutoClick) {
+      const intervalId = setInterval(() => {
+        startAutoClick()
+      }, frequencyAutoClick);
 
-    return stopClick;
+      return () => {clearInterval(intervalId)};
+    }
   });
 
   const stepChange = (e) => {
