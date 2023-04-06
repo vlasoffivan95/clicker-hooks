@@ -10,15 +10,21 @@ const Clicker = () => {
   const [intervalId, setIntervalId] = useState(null);
 
 // without strict mode
-  useEffect(()=> {
-    if(!isStartedAutoClick) {
-      setStartedAutoClick(true)
-      const intervalId = setInterval(addNumber, frequencyAutoClick*1000)
-      setIntervalId(intervalId)
-    }
-  }, [])
+  // useEffect(()=> {
+  //   if(!isStartedAutoClick) {
+  //     setStartedAutoClick(true)
+  //     const intervalId = setInterval(addNumber, frequencyAutoClick*1000)
+  //     setIntervalId(intervalId)
+  //   }
+  // }, [])
 
 
+  
+
+useEffect ( ()=>{
+  startAutoClick();
+  return stopClick
+}, [] )
 
 
 
@@ -61,8 +67,10 @@ const Clicker = () => {
   };
 
   const stopClick = () => {
+    setIntervalId((intervalId)=> {
+      clearInterval(intervalId)
+    })
     setStartedAutoClick(false);
-    clearInterval(intervalId);
   };
 
   return (
