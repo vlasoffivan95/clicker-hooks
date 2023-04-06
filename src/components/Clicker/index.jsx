@@ -8,16 +8,20 @@ const Clicker = () => {
   const [frequencyAutoClick, setFreqAutoclick] = useState(1);
   const [isStartedAutoClick, setStartedAutoClick] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
-  console.log(isStartedAutoClick)
-  useEffect(() => {
-    if (!isStartedAutoClick) {
-      const intervalId = setInterval(() => {
-        startAutoClick()
-      }, frequencyAutoClick);
 
-      return () => {clearInterval(intervalId)};
+// without strict mode
+  useEffect(()=> {
+    if(!isStartedAutoClick) {
+      setStartedAutoClick(true)
+      const intervalId = setInterval(addNumber, frequencyAutoClick*1000)
+      setIntervalId(intervalId)
     }
-  });
+  }, [])
+
+
+
+
+
 
   const stepChange = (e) => {
     const {
@@ -51,14 +55,14 @@ const Clicker = () => {
   const startAutoClick = () => {
     if (!isStartedAutoClick) {
       setStartedAutoClick(true);
-      const intervalId = setInterval(addNumber, frequencyAutoClick * 1000);
-      setIntervalId(intervalId);
+      const intervalID = setInterval(addNumber, frequencyAutoClick * 1000);
+      setIntervalId(intervalID);
     }
   };
 
   const stopClick = () => {
-    clearInterval(intervalId);
     setStartedAutoClick(false);
+    clearInterval(intervalId);
   };
 
   return (
