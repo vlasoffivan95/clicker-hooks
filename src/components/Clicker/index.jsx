@@ -9,7 +9,7 @@ const Clicker = () => {
   const [isStartedAutoClick, setStartedAutoClick] = useState(false);
   const [intervalId, setIntervalId] = useState(null);
 
-// without strict mode
+  // without strict mode
   // useEffect(()=> {
   //   if(!isStartedAutoClick) {
   //     setStartedAutoClick(true)
@@ -18,16 +18,10 @@ const Clicker = () => {
   //   }
   // }, [])
 
-
-  
-
-useEffect ( ()=>{
-  startAutoClick();
-  return stopClick
-}, [] )
-
-
-
+  useEffect(() => {
+    startAutoClick();
+    return stopClick;
+  }, []);
 
   const stepChange = (e) => {
     const {
@@ -67,9 +61,9 @@ useEffect ( ()=>{
   };
 
   const stopClick = () => {
-    setIntervalId((intervalId)=> {
-      clearInterval(intervalId)
-    })
+    setIntervalId((intervalId) => {
+      clearInterval(intervalId);
+    });
     setStartedAutoClick(false);
   };
 
